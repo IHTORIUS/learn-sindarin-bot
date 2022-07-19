@@ -1,5 +1,5 @@
 process.env.NTBA_FIX_319 = 1;
-process.env.PORT;
+process.env.PORT||5000;
 const TelegramApi = require('node-telegram-bot-api')
 const {words, films, books} = require('./db')
 const fs = require("fs");
