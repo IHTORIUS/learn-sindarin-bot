@@ -1,6 +1,8 @@
 process.env.NTBA_FIX_319 = 1;
+process.env.PORT;
 const TelegramApi = require('node-telegram-bot-api')
 const {words, films, books} = require('./db')
+const fs = require("fs");
 
 const token = '5277345264:AAFfR1ZhCiO9xRwuJHGpJ3__s3puKR09i88'
 const bot = new TelegramApi(token, {polling: true});
@@ -89,6 +91,9 @@ bot.on('message', async msg =>{
             'resize_keyboard' : true,
             "keyboard": [["Краткий словарь📓"], ["Список фраз🗣"], ["Письмо🪶" ], ["Список фильмов🎥", "Лорная литература 📚"]]
             }, 
+        });
+           fs.appendFile("logs.txt", logtime + " user:" + msg.from.first_name + "\n", function (error) {
+            if (error) throw error;
         });
     }
     
