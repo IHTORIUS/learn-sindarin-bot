@@ -1,6 +1,5 @@
 process.env.NTBA_FIX_319 = 1;
 const TelegramApi = require('node-telegram-bot-api')
-const mongoose = require('mongoose')
 const {words, films, books} = require('./db')
 
 const token = '5277345264:AAFfR1ZhCiO9xRwuJHGpJ3__s3puKR09i88'
