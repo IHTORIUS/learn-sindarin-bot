@@ -85,13 +85,13 @@ bot.on('message', async msg =>{
     if(text==="/start"){
         await bot.sendMessage(chatId, startText);
         await bot.sendSticker(chatId,'https://t.me/learnelvish/29');
-        bot.res
         bot.sendMessage(msg.chat.id, "Выбирай одну из команд👇🏻", {
         "reply_markup": {
             'resize_keyboard' : true,
             "keyboard": [["Краткий словарь📓"], ["Список фраз🗣"], ["Письмо🪶" ], ["Список фильмов🎥", "Лорная литература 📚"]]
             }, 
         });
+            const logtime = new Date(Date.now()).toLocaleString();
            fs.appendFile("logs.txt", logtime + " user:" + msg.from.first_name + "\n", function (error) {
             if (error) throw error;
         });
