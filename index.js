@@ -3,7 +3,6 @@ const TelegramApi = require('node-telegram-bot-api')
 const {words, films, books} = require('./db')
 
 const token = '5277345264:AAFfR1ZhCiO9xRwuJHGpJ3__s3puKR09i88'
-
 const bot = new TelegramApi(token, {polling: true});
 
 const alfabite = {
