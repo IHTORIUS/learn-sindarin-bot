@@ -1,11 +1,24 @@
 process.env.NTBA_FIX_319 = 1;
-process.env.PORT||5000;
+const express = require('express')
 const TelegramApi = require('node-telegram-bot-api')
 const {words, films, books} = require('./db')
 
 const token = '5277345264:AAFfR1ZhCiO9xRwuJHGpJ3__s3puKR09i88'
 const bot = new TelegramApi(token, {polling: true});
 
+//Express Server For Heroku
+const app = express();
+const PORT = process.env.PORT || 3000
+const start = async () => {
+    try{
+        app.listen(PORT,() => console.log(`server started at ${PORT}`))
+    } catch(err){
+        console.log(err);
+    }
+}
+start();
+
+//Telegram Bot
 const alfabite = {
     reply_markup: JSON.stringify(
         {
